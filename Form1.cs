@@ -17,15 +17,44 @@ namespace VirtualBoF20
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
-            string listTrick = comboBox1.Text;
+
+        }
+
+        private void buttonAddTrick_Click(object sender, EventArgs e)
+        {
+            string listTrick = comboBoxA.Text;
 
             if (listTrick != "")
             {
-                listBoxT1.Items.Add(listTrick);
-                comboBox1.Text = "";
-                 
+                TrickBankA.Items.Add(listTrick);
+                comboBoxA.Text = "";
+            }
+        }
+
+        private void buttonMinusTrick_Click(object sender, EventArgs e)
+        {
+            if (TrickBankA.Items.Count > 0)
+            {
+                if (TrickBankA.SelectedValue != null)
+                {
+                    var selTrix = TrickBankA.SelectedItem;
+
+                    TrickBankA.Items.Remove(selTrix);
+
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string NameA = info_T1name.Text;
+
+            if (NameA != null)
+            {
+                TrickBank_NameA.Text = NameA;
             }
         }
     }
